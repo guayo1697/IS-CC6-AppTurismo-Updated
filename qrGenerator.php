@@ -6,14 +6,13 @@
     mkdir($dir);
   }
 
-  $filename = $dir . 'test2.png';
+  $filename = $_GET["nombre"];
+  $contenido = $_GET["contenido"];
+  $filename = $dir . $filename .'.png';
 
   $size = 10;
   $level = 'M';
   $frameSize = 3;
-  $contenido = 'Guayo come polla';
-
   QRcode::png($contenido, $filename, $level, $size, $frameSize);
-
   echo '<img src="' . $filename . '"/>';
 ?>
