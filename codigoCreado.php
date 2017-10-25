@@ -36,9 +36,13 @@ body {font-family: "Lato", sans-serif}
   }
 
 
-  if(isset($_GET['nombre'])){
+  if(isset($_GET['nombre']) && isset($_GET['codigo'])){
     $filename = $_GET["nombre"];
-    $contenido = "http://192.168.1.8:5555/AppTurismo/index". $filename. ".html";
+    $codigo = $_GET["codigo"];
+    $host = getHostByName(getHostName());
+    $host = "192.168.43.87";
+    $localIP = "http://" . $host . ":5555";
+    $contenido = $localIP . "/AppTurismo/index". $filename . ".php?codigo=". $codigo;
     $filename = $dir . $filename . '.png';
 
     $size = 10;
