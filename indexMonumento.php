@@ -83,7 +83,7 @@ h1,h2,h3,h4,h5,h6 {
 <!-- arquitectura -->
 <div class='w3-row w3-padding-64' id='Arquitectura'>
 <div class='w3-col l6 w3-padding-large'>
-<h1 class='w3-center'>Arquitectura</h1><br>
+<h1 class='w3-center'>ARQUITECTURA</h1><br>
 <p class='w3-large'> $arquitectura</p>
 </div>
 
