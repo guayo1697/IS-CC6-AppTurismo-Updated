@@ -85,16 +85,16 @@
         <br>
         <br>
         <div>Historia
-        <textarea class="w3-input w3-border" style="resize:none" name=Historia placeholder="Historia"></textarea>
+        <textarea class="w3-input w3-border" style="resize:vertical" name=Historia placeholder="Historia"></textarea>
         </div>
         <div>Arquitectura
-        <textarea class="w3-input w3-border" style="resize:none" name=Arquitectura placeholder="Arquitectura"></textarea>
+        <textarea class="w3-input w3-border" style="resize:vertical" name=Arquitectura placeholder="Arquitectura"></textarea>
         </div>
         <div>Conservación
-        <textarea class="w3-input w3-border" style="resize:none" name=Conservacion placeholder="Conservación"></textarea>
+        <textarea class="w3-input w3-border" style="resize:vertical" name=Conservacion placeholder="Conservación"></textarea>
         </div>
         <div>Cultura Popular
-        <textarea class="w3-input w3-border" style="resize:none" name=Cultura placeholder="Cultura Popular"></textarea>
+        <textarea class="w3-input w3-border" style="resize:vertical" name=Cultura placeholder="Cultura Popular"></textarea>
         </div>
       
       <button class='w3-button w3-white w3-section w3-left w3-border w3-border-grey' type=submit>AGREGAR</button>

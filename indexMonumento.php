@@ -61,7 +61,7 @@ h1,h2,h3,h4,h5,h6 {
 </div>
 <!-- Header -->
 <header class='w3-display-container w3-content w3-wide' style='max-width:1600px;min-width:500px' id='home'>
-<img class='w3-image' src=imagen2.jpg alt='Hamburger Catering' width='1600' height='800'>
+<img class='w3-image' src=images/imagen2.jpg alt='Hamburger Catering' width='1600' height='800'>
 <div class='w3-display-bottomleft w3-padding-large w3-opacity'>
 </div>
 
@@ -72,10 +72,10 @@ h1,h2,h3,h4,h5,h6 {
 <!-- historia -->
 <div class='w3-row w3-padding-64' id='Historia'>
 <div class='w3-col m6 w3-padding-large w3-hide-small'>
-<img src='granjaguar.jpg' class='w3-round w3-image' alt='Table Setting' width='600' height='750'>
+<img src='images/granjaguar.jpg' class='w3-round w3-image' alt='Table Setting' width='600' height='750'>
 </div> <div class='w3-col m6 w3-padding-large'>
 <h1 class='w3-center'>HISTORIA</h1><br> 
-<h5 class='w3-center'>Fecha Aproximada de Construccion: $fecha</h5>
+<h5 class='w3-center'>Año Aproximado de Construccion:". substr($fecha, 0,4)."</h5>
 <p class='w3-large'> $historia</p>
 </div>
 </div>
@@ -88,7 +88,7 @@ h1,h2,h3,h4,h5,h6 {
 </div>
 
 <div class='w3-col l6 w3-padding-large'>
-<img src='jaguar.jpg' class='w3-round w3-image' alt='jaguar' width='500' height='500'>
+<img src='images/jaguar.jpg' class='w3-round w3-image' alt='jaguar' width='500' height='500'>
 </div>
 </div>
 </div>

@@ -1,5 +1,5 @@
 <html>
-<title>AppTurismo-QR ADMIN</title>
+<title>Centro Turístico Modificado</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
@@ -12,54 +12,37 @@ body {font-family: "Lato", sans-serif}
 <body>
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-yellow w3-card-2">
+  <div class="w3-bar w3-red w3-card-2">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="indexAdminQR.html" class="w3-bar-item w3-button w3-padding-large">Crear otro codigo</a>
+    <a href="modificarCentroTuristico.php" class="w3-bar-item w3-button w3-padding-large">Modificar otro Centro Turístico</a>
     </div>
   </div>
 </div>
 <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px" id="contact">
 
-  <h2 class="w3-wide w3-center">Se ha creado un Codigo QR</h2>
-
-
-
 
 
 <?php
-  require 'phpqrcode/qrlib.php';
-  $dir = 'temp/';
+$user = "postgres";
+$password = "root";
+$dbname = "AppTurismo";
+$port = "5432";
+$host = "localhost";
+$cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
+$conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
 
-  if(!file_exists($dir)){
-    mkdir($dir);
-  }
+$codigo = $_GET["Codigo"];
+$nombre = $_GET["Nombre"];
+$direccion = $_GET["Direccion"];
+$departamento = $_GET["Departamento"];
 
+$query = "UPDATE centro_turistico SET nombre='$nombre', direccion='$direccion', id_dep='$departamento' WHERE id_centro='$codigo'";
 
-  if(isset($_GET['nombre']) && isset($_GET['codigo'])){
-    $filename = $_GET["nombre"];
-    $codigo = $_GET["codigo"];
-    $host = getHostByName(getHostName());
-    $host = "192.168.43.193";
-    $localIP = "http://" . $host . ":5555";
-    $contenido = $localIP . "/AppTurismo/indexMonumento.php?codigo=". $codigo;
-    $filename = $dir . $filename . '.png';
-
-    $size = 10;
-    $level = 'M';
-    $frameSize = 3;
-    QRcode::png($contenido, $filename, $level, $size, $frameSize);
-    echo '<img src="' . $filename . '"/>';
-  }
+$resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL".pg_last_error());
+echo "<h2 class=w3-wide w3-center>Se modificó $nombre</h2>"
 ?>
-
-
-
-
-
-
-
-    </div>
+      </div>
   </div>
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <i class="fa fa-facebook-official w3-hover-opacity"></i>

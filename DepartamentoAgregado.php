@@ -38,7 +38,7 @@ body {font-family: "Lato", sans-serif}
   $nombre = $_GET["Nombre"];
   $region = $_GET["Region"];
 
-  $query = "INSERT INTO centro_turistico VALUES('$codigo','$nombre','$region')";
+  $query = "INSERT INTO departamento VALUES('$codigo','$nombre','$region')";
 
   $resultado = pg_query($conexion, $query) or die("El Departamento $nombre ya existe.");
   echo "<h2 class=w3-wide w3-center>Se agregó el Departamento $nombre</h2>"
