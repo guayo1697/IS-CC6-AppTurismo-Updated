@@ -1,5 +1,5 @@
 <html>
-<title>Centro Turístico Modificado</title>
+<title>Monumento Eliminado</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
@@ -12,14 +12,15 @@ body {font-family: "Lato", sans-serif}
 <body>
   <!-- Navbar -->
   <div class="w3-top">
-    <div class="w3-bar w3-red w3-card-2">
+    <div class="w3-bar w3-teal w3-card-2">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="CentroTuristico.php" class="w3-bar-item w3-button w3-padding-large">Ver Centros Turísticos</a>
+      <a href="Monumento.php" class="w3-bar-item w3-button w3-padding-large">Ver Monumentos</a>
     </div>
   </div>
 </div>
-<div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px" id="contact">
+
+<div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
 
 
 
@@ -32,22 +33,25 @@ body {font-family: "Lato", sans-serif}
   $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
   $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
 
-  $codigo = $_GET["Codigo"];
-  $nombre = $_GET["Nombre"];
-  $direccion = $_GET["Direccion"];
-  $departamento = $_GET["Departamento"];
+  $codigo = $_GET["codigo"];
+  $query3 = "DELETE  FROM informacion WHERE codigo='$codigo'";
+  $resultado3 = pg_query($conexion, $query3) or die("El Departamento no pudo eliminarse.".pg_last_error());
 
-  $query = "UPDATE centro_turistico SET nombre='$nombre', direccion='$direccion', id_dep='$departamento' WHERE id_centro='$codigo'";
+  $query2 = "DELETE  FROM monumento WHERE codigo='$codigo'";
+  $resultado2 = pg_query($conexion, $query2) or die("El Departamento no pudo eliminarse.".pg_last_error());
 
-  $resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL".pg_last_error());
-  echo "<h2 class=w3-wide w3-center>Se modificó $nombre</h2>"
+  $query = "DELETE  FROM qr WHERE codigo='$codigo'";
+  $resultado = pg_query($conexion, $query) or die("El Departamento no pudo eliminarse.".pg_last_error());
+
+
+
+  pg_close($conexion);
+
+  echo "<h2 class=w3-wide w3-center>Se eliminó un Monumento</h2>"
   ?>
 </div>
 </div>
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 </body>

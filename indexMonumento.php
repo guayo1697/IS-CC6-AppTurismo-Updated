@@ -21,10 +21,13 @@ while ($fila=pg_fetch_array($resultado)) {
   $historia = $fila['historia'];
   $arquitectura = $fila['arquitectura'];
   $conservacion = $fila['conservacion'];
+  $cultura = $fila['cultura_popular'];
 }
 while ($fila2=pg_fetch_array($resultado2)) {
   $fecha = $fila2['fecha_construccion'];
   $ubicacion = $fila2['ubicacion'];
+  $uso = $fila2['uso'];
+  $extra = $fila2['extra'];
 }
 
 
@@ -38,6 +41,9 @@ echo "
 div {
   text-align: justify;
   text-justify: inter-word;
+}
+img {
+    vertical-align: middle;
 }
 body {font-family: 'Times New Roman', Georgia, Serif;}
 h1,h2,h3,h4,h5,h6 {
@@ -55,27 +61,40 @@ h1,h2,h3,h4,h5,h6 {
 <div class='w3-right w3-hide-small'>
 <a href='#Historia' class='w3-bar-item w3-button'>Historia</a>
 <a href='#Arquitectura' class='w3-bar-item w3-button'>Arquitectura</a>
+<a href='#Conservacion' class='w3-bar-item w3-button'>Conservacion</a>
+<a href='#Cultura' class='w3-bar-item w3-button'>Cultura Popular</a>";
+if($extra != ""){
+  echo "<a href='#Extra' class='w3-bar-item w3-button'>Extra</a>";
+  }
+echo"
 <a href='#Ubicación' class='w3-bar-item w3-button'>Ubicación</a>
 </div>
 </div>
 </div>
 <!-- Header -->
 <header class='w3-display-container w3-content w3-wide' style='max-width:1600px;min-width:500px' id='home'>
-<img class='w3-image' src=images/imagen2.jpg alt='Hamburger Catering' width='1600' height='800'>
+<img class='w3-image' src=images/imagen".$codigo."1.jpg alt='Hamburger Catering' width='1600' height='800'>
 <div class='w3-display-bottomleft w3-padding-large w3-opacity'>
 </div>
 
 </header> 
 <!-- Page content -->
 <div class='w3-content w3-blue-grey' style='max-width:1100px'>
+<br>
+<br>
+<br>
+<center><h1 class='w3-center'>$nombre</h1><br></center>
 
 <!-- historia -->
 <div class='w3-row w3-padding-64' id='Historia'>
 <div class='w3-col m6 w3-padding-large w3-hide-small'>
-<img src='images/granjaguar.jpg' class='w3-round w3-image' alt='Table Setting' width='600' height='750'>
+<br>
+<br>
+<img src='images/imagen".$codigo."2.jpg' class='w3-round w3-image' alt='Table Setting' width='600' height='750'>
 </div> <div class='w3-col m6 w3-padding-large'>
-<h1 class='w3-center'>HISTORIA</h1><br> 
+<h1 class='w3-center'>Historia</h1><br> 
 <h5 class='w3-center'>Año Aproximado de Construccion:". substr($fecha, 0,4)."</h5>
+<h5 class='w3-center'>Uso:". $uso."</h5>
 <p class='w3-large'> $historia</p>
 </div>
 </div>
@@ -83,14 +102,60 @@ h1,h2,h3,h4,h5,h6 {
 <!-- arquitectura -->
 <div class='w3-row w3-padding-64' id='Arquitectura'>
 <div class='w3-col l6 w3-padding-large'>
-<h1 class='w3-center'>ARQUITECTURA</h1><br>
+<h1 class='w3-center'>Arquitectura</h1><br>
 <p class='w3-large'> $arquitectura</p>
 </div>
 
 <div class='w3-col l6 w3-padding-large'>
-<img src='images/jaguar.jpg' class='w3-round w3-image' alt='jaguar' width='500' height='500'>
+<img src='images/imagen".$codigo."3.jpg' class='w3-round w3-image' alt='jaguar' width='500' height='500'>
 </div>
 </div>
+<hr>
+<!-- conservacion -->
+<div class='w3-row w3-padding-64' id='Conservacion'>
+<div class='w3-col m6 w3-padding-large w3-hide-small'>
+<br>
+<br>
+<img src='images/imagen".$codigo."4.jpg' class='w3-round w3-image' alt='Table Setting' width='600' height='750'>
+</div> <div class='w3-col m6 w3-padding-large'>
+<h1 class='w3-center'>Conservación</h1><br> 
+<p class='w3-large'> $conservacion</p>
+</div>
+</div>
+<hr>
+<!-- cultura popular -->
+<div class='w3-row w3-padding-64' id='Cultura'>
+<div class='w3-col l6 w3-padding-large'>
+<h1 class='w3-center'>Cultura Popular</h1><br>
+<p class='w3-large'> $cultura</p>
+</div>
+
+<div class='w3-col l6 w3-padding-large'>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src='images/imagen".$codigo."5.jpg' class='w3-round w3-image' alt='jaguar' width='500' height='500'>
+</div>
+</div>
+<hr>";
+if($extra != ""){
+  echo "<!-- Extra -->
+<center>
+<div class='w3-row w3-padding-64' id='Extra'>
+<div class='w3-center w3-padding-large w3-hide-small'>
+<br>
+<br>
+</div> <div class='w3-center m6 w3-padding-large'>
+<h1 class='w3-center'>Datos Extras</h1><br> 
+<p class='w3-large'> $extra</p>
+</div>
+</div>
+</center>";
+}
+echo"
 </div>
 <hr>
 <!-- Add Google Maps -->

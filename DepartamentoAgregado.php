@@ -15,8 +15,8 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-bar w3-brown w3-card-2">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="menu.html" class="w3-bar-item w3-button w3-padding-large">Menú</a>
-      <a href="nuevoDepartamento.html" class="w3-bar-item w3-button w3-padding-large">Agregar otro Departamento</a>
+      <a href="Departamento.php" class="w3-bar-item w3-button w3-padding-large">Ver Departamentos</a>
+      <a href="nuevoDepartamento.php" class="w3-bar-item w3-button w3-padding-large">Agregar otro Departamento</a>
     </div>
   </div>
 </div>

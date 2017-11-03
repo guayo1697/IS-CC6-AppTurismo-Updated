@@ -1,5 +1,5 @@
 <html>
-<title>Departamento Agregado</title>
+<title>Centro Turístico Agregado</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
@@ -15,8 +15,8 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-bar w3-grey w3-card-2">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="menu.html" class="w3-bar-item w3-button w3-padding-large">Menú</a>
-      <a href="nuevoCentroTuristico.php" class="w3-bar-item w3-button w3-padding-large">Agregar otro Centro Turístico</a>
+      <a href="CentroTuristico.php" class="w3-bar-item w3-button w3-padding-large">Ver Centros Turísticos</a>
+      <a href="nuevoMonumento.php" class="w3-bar-item w3-button w3-padding-large">Agregar otro Centro Turístico</a>
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-bar w3-grey w3-card-2">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="menu.html" class="w3-bar-item w3-button w3-padding-large">Menú</a>
+      <a href="Monumento.php" class="w3-bar-item w3-button w3-padding-large">Ver Monumentos</a>
       <a href="nuevoMonumento.php" class="w3-bar-item w3-button w3-padding-large">Agregar otro Monumento</a>
     </div>
   </div>
@@ -66,8 +66,8 @@ body {font-family: "Lato", sans-serif}
 
 
   echo "<h2 class=w3-wide w3-center>Se agregó el Monumento $nombre</h2>";
-  //CREACION DE CODIGO
-  //---------------------------------------------------------------------------
+//CREACION DE CODIGO
+//---------------------------------------------------------------------------
   $dir = 'temp/';
 
   if(!file_exists($dir)){
