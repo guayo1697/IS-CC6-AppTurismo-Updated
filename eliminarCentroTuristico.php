@@ -36,7 +36,7 @@ body {font-family: "Lato", sans-serif}
   $codigo = $_GET["id_centro"];
   $query = "DELETE FROM centro_turistico WHERE id_centro='$codigo'";
 
-  $resultado = pg_query($conexion, $query) or die("El Centro Turístico no pudo eliminarse.".pg_last_error());
+  $resultado = pg_query($conexion, $query) or die("El Centro Turístico no pudo eliminarse.");
   echo "<h2 class=w3-wide w3-center>Se eliminó un Centro Turístico</h2>"
   ?>
 </div>

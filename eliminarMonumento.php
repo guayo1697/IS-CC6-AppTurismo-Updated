@@ -35,14 +35,14 @@ body {font-family: "Lato", sans-serif}
 
   $codigo = $_GET["codigo"];
   $query3 = "DELETE  FROM informacion WHERE codigo='$codigo'";
-  $resultado3 = pg_query($conexion, $query3) or die("El Departamento no pudo eliminarse.".pg_last_error());
+  $resultado3 = pg_query($conexion, $query3) or die("El Departamento no pudo eliminarse.");
 
   $query2 = "DELETE  FROM monumento WHERE codigo='$codigo'";
-  $resultado2 = pg_query($conexion, $query2) or die("El Departamento no pudo eliminarse.".pg_last_error());
+  $resultado2 = pg_query($conexion, $query2) or die("El Departamento no pudo eliminarse.");
 
   $query = "DELETE  FROM qr WHERE codigo='$codigo'";
-  $resultado = pg_query($conexion, $query) or die("El Departamento no pudo eliminarse.".pg_last_error());
-
+  $resultado = pg_query($conexion, $query) or die("El Departamento no pudo eliminarse.");
+  unlink("temp/".$codigo."QR.png");
 
 
   pg_close($conexion);

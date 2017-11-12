@@ -36,7 +36,7 @@ body {font-family: "Lato", sans-serif}
   $codigo = $_GET["id_dep"];
   $query = "DELETE FROM departamento WHERE id_dep='$codigo'";
 
-  $resultado = pg_query($conexion, $query) or die("El Departamento no pudo eliminarse.".pg_last_error());
+  $resultado = pg_query($conexion, $query) or die("El Departamento no pudo eliminarse.");
   echo "<h2 class=w3-wide w3-center>Se eliminó un Departamento</h2>"
   ?>
 </div>
