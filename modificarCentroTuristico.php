@@ -31,6 +31,7 @@ body {font-family: "Lato", sans-serif}
       <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
         <div class="w3-half">ID Centro Turístico
           <?php
+          /*Conexion a la base de datos*/
           $codigo = $_GET["id_centro"];
           $user = "postgres";
           $password = "root";
@@ -39,7 +40,7 @@ body {font-family: "Lato", sans-serif}
           $host = "localhost";
           $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
           $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+          /*Obtiene el codigo(id_centro) usando el metodo get que es enviado al momento de dar clic sobre modificar en la pagina de CentroTuristico.php, los datos en los inputs son llenados utilizando un query donde el id_centro sea el mismo, al modificar lo que se deseaba con otro query se manda el id_centro, nombre, direccion e id_dep a CentroTuristicoModificado.php*/
           $query = "select * from centro_turistico where id_centro='$codigo'";
 
           $resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL");

@@ -26,6 +26,7 @@ body {font-family: "Lato", sans-serif}
 
 
   <?php
+/*Conexion a la base de datos*/
   $user = "postgres";
   $password = "root";
   $dbname = "AppTurismo";
@@ -33,7 +34,7 @@ body {font-family: "Lato", sans-serif}
   $host = "localhost";
   $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
   $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Obtiene el codigo(id_centro), nombre, direccion y el id_dep de la pagina de nuevoCentroTuristico.html usando el metodo get, para luego con un query realizar el insert en la base de datos*/
   $codigo = $_GET["Codigo"];
   $nombre = $_GET["Nombre"];
   $direccion = $_GET["Direccion"];

@@ -26,6 +26,7 @@ body {font-family: "Lato", sans-serif}
 
 
   <?php
+  /*Conexion a la base de datos*/
   require 'phpqrcode/qrlib.php';
   $user = "postgres";
   $password = "root";
@@ -34,7 +35,7 @@ body {font-family: "Lato", sans-serif}
   $host = "localhost";
   $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
   $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Obtiene el codigo,nombre,fecha,uso,ubicaion,extra(si se lleno),centro turistico y se agrega la nueva tupla a la tabla de monumento, por el otro lado se obtiene el codigo,nombre,centro turistico, historia, conservaion, cultura popular y arquitectura y se agrega la nueva tupla a la tabla de informacion, el codigo se obtiene de la pagina de nuevoMonumento.php usando el metodo get, para luego con un query realizar el insert en la base de datos*/
   $codigo = $_GET["Codigo"];
   $nombre = $_GET["Nombre"];
   $fecha = $_GET["Fecha"];

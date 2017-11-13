@@ -25,6 +25,7 @@ body {font-family: "Lato", sans-serif}
 
 
   <?php
+/*Conexion a la base de datos*/
   $user = "postgres";
   $password = "root";
   $dbname = "AppTurismo";
@@ -32,7 +33,7 @@ body {font-family: "Lato", sans-serif}
   $host = "localhost";
   $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
   $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Obtiene el codigo (id_centro) utilizando el metodo get enviado por la pagina de CentroTuristico.php al momento de dar clic sobre eliminar, el codigo se coloca en un query y al ser llave eliminara la tupla en la base de datos*/
   $codigo = $_GET["id_centro"];
   $query = "DELETE FROM centro_turistico WHERE id_centro='$codigo'";
 

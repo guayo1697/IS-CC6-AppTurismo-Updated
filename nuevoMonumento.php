@@ -50,6 +50,7 @@ body {font-family: "Lato", sans-serif}
           <select class=w3-select name=Centro required>
             <option value="" disabled selected>Elegir Centro Turístico</option>
             <?php
+            /*Conexion a la base de datos*/
             $user = "postgres";
             $password = "root";
             $dbname = "AppTurismo";
@@ -57,7 +58,7 @@ body {font-family: "Lato", sans-serif}
             $host = "localhost";
             $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
             $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Realiza un query en donde muestra todos los centros turisticos que hay actualmente en la base de datos y enviar los parametros a la pagina de MonumentoAgregado.php para luego realizar el insert en las debidas tablas*/
             $query = "select * from centro_turistico";
 
             $resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL");

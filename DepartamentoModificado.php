@@ -24,6 +24,7 @@ body {font-family: "Lato", sans-serif}
 
 
   <?php
+/*Conexion a la base de datos*/
   $user = "postgres";
   $password = "root";
   $dbname = "AppTurismo";
@@ -31,7 +32,7 @@ body {font-family: "Lato", sans-serif}
   $host = "localhost";
   $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
   $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Obtiene los datos de codigo(id_dep), nombre y region de la pagina anterior que es modificarDepartamento.php estos datos se incluyen en un query que realiza el update en la base de datos*/
   $codigo = $_GET["Codigo"];
   $nombre = $_GET["Nombre"];
   $region = $_GET["Region"];

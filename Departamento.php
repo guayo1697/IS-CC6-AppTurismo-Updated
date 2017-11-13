@@ -33,7 +33,7 @@ body {font-family: "Lato", sans-serif}
       </tr>
 
       <?php
-
+/*Conexion a la base de datos*/
       $user = "postgres";
       $password = "root";
       $dbname = "AppTurismo";
@@ -43,7 +43,7 @@ body {font-family: "Lato", sans-serif}
       $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
 
       $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Query en donde se mandan a traer todos las tuplas de la tabla de departamentos para luego ser desplegados en una tabla de HTML, se envia el id_dep ya se para enviar o modificar la tupla*/
       $query = "select * from departamento";
 
       $resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL");

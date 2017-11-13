@@ -1,4 +1,5 @@
 <?php
+/*Requiere la libreria encontrada en internet para crear los codigos qr, guarda la imagen en la carpeta /temp en donde el nombre de la imagen en el codigo junto con "QR" en un archivo .png*/
   require 'phpqrcode/qrlib.php';
   $dir = 'temp/';
 

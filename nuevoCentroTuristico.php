@@ -42,6 +42,7 @@ body {font-family: "Lato", sans-serif}
           <select class=w3-select name=Departamento required>
             <option value="" disabled selected>Elegir Departamento</option>
             <?php
+            /*Conexion a la base de datos*/
             $user = "postgres";
             $password = "root";
             $dbname = "AppTurismo";
@@ -49,7 +50,7 @@ body {font-family: "Lato", sans-serif}
             $host = "localhost";
             $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
             $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Envia todos los datos a la pagina de CentroTuristicoAgregado.php pero utiliza un query para mostrar todos los departamentos que se encuentran alctualmente registrados en la base de datos*/
             $query = "select * from departamento";
 
             $resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL");

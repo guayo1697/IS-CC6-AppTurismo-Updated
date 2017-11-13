@@ -34,7 +34,7 @@ body {font-family: "Lato", sans-serif}
       </tr>
 
       <?php
-
+/*Genera la conexion a la base de datos*/
       $user = "postgres";
       $password = "root";
       $dbname = "AppTurismo";
@@ -44,7 +44,7 @@ body {font-family: "Lato", sans-serif}
       $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
 
       $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*El siguiente query es para obtener todos los centro turisticos registrados en la base de datos y retorna un arreglo con todos los datos que se encuentran dentro de la tabla de Centro_Turistico que luego son despelgados en una tabla de HTML se envia el id_centro ya se para enviar o modificar la tupla*/
       $query = "select * from centro_turistico";
 
       $resultado = pg_query($conexion, $query) or die("Error en la Consulta SQL 2");

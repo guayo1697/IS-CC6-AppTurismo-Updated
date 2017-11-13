@@ -30,6 +30,7 @@ body {font-family: "Lato", sans-serif}
       <div class="w3-row-padding" style="margin:0 -64x 8px 64px">
         <div class="w3-half">ID Monumento
           <?php
+          /*Conexion a la base de datos*/
           $user = "postgres";
           $password = "root";
           $dbname = "AppTurismo";
@@ -37,7 +38,7 @@ body {font-family: "Lato", sans-serif}
           $host = "localhost";
           $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
           $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+          /*Obtiene el codigo usando el metodo get que es enviado al momento de dar clic sobre modificar en la pagina de Monumento.php, los datos en los inputs son llenados utilizando un query donde el codigo sea el mismo sobre las tablas de monumento e informacion, al modificar lo que se deseaba con otro query se mandan todos los datos a la pagina de MonumentoModificado.php*/
           $codigo = $_GET["codigo"];
           $query2 = "select * from monumento where codigo='$codigo'";
 

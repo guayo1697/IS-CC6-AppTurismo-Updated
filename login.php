@@ -1,4 +1,5 @@
 <?php
+/*Obtiene el usario y la contraseña con el metodo post de la pagina de indexLogin.html, verifica que sean los indicados y redirecciona a indexAdmin.html, si alguno de los datos es erroneo indica que no se pudo hacer el login y que se intente denuevo*/
 $usuario = $_POST["usuario"];
 $contrasena = $_POST["contrasena"];
 echo "$usuario";

@@ -2,6 +2,7 @@
 <html>
 
 <?php
+/*Conexion a la base de datos*/
 $codigo = $_GET["codigo"];
 $user = "postgres";
 $password = "root";
@@ -10,6 +11,7 @@ $port = "5432";
 $host = "localhost";
 $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
 $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
+/*Al momento de la creacion del nuevo monumento, se crea el codigo QR cuya informacion es un URL que dirige a esta pagina y en el URL se indica el codigo del monumento el cual esta pagina lo utiliza con el metodo get, obtiene toda la informacion de la tabla informacion y de la tabala de monumento. Coloca los parametros en variables y los pone en su lugar correspondiente al template*/
 $query = "select * from informacion where codigo='$codigo'";
 $query2 = "select * from monumento where codigo='$codigo'";
 

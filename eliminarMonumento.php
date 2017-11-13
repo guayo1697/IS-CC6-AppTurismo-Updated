@@ -25,6 +25,7 @@ body {font-family: "Lato", sans-serif}
 
 
   <?php
+/*Conexion a la base de datos*/
   $user = "postgres";
   $password = "root";
   $dbname = "AppTurismo";
@@ -32,7 +33,7 @@ body {font-family: "Lato", sans-serif}
   $host = "localhost";
   $cadenaConexion = "host=$host port=$port dbname=$dbname user=$user password=$password";
   $conexion = pg_connect($cadenaConexion) or die("Error en la Conexión: ".pg_last_error());
-
+/*Obtiene el codigo utilizando el metodo get enviado por la pagina de Monumento.php al momento de dar clic sobre eliminar, el codigo se coloca en un query y al ser llave eliminara la tupla en la base de datos, inicialmente se elimina en la tabla de informacion, seguidamente en la tabla de monumento y finalmente en la tabla de qr para que no exista problemas de llave*/
   $codigo = $_GET["codigo"];
   $query3 = "DELETE  FROM informacion WHERE codigo='$codigo'";
   $resultado3 = pg_query($conexion, $query3) or die("El Departamento no pudo eliminarse.");
